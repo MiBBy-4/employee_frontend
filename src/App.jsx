@@ -1,7 +1,9 @@
 function App() {
   return (
-    <div className="App">
-      Application
+    <div className="container">
+      <h1 className="text-center">
+        React Application
+      </h1>
     </div>
   );
 }
