@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export function getEmployee() {
+export function getEmployees() {
   return axios.get(`${process.env.REACT_APP_API}api/Employee`);
 }
 
@@ -24,4 +24,8 @@ export function patchEmployee(data) {
 
 export function deleteEmployee(employeeId) {
   return axios.delete(`${process.env.REACT_APP_API}api/Employee/${employeeId}`);
+}
+
+export function getEmployee(employeeId) {
+  return axios.get(`${process.env.REACT_APP_API}api/Employee/${employeeId}`);
 }
