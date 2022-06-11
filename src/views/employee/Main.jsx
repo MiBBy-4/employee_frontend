@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getEmployee } from '../apiRequests/EmployeeRequests';
+import { getEmployee } from '../../requests/apiRequests/EmployeeRequests';
 
 export default function MainEmployee() {
   const [employee, setEmployee] = useState([]);

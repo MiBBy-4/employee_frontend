@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import MainDepartment from './Department/Main';
-import MainEmployee from './Employee/Main';
-import Navigation from './templates/Navigation';
+import MainDepartment from './views/department/Main';
+import MainEmployee from './views/employee/Main';
+import Navigation from './components/templates/Navigation';
 
 function App() {
   return (
