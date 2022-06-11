@@ -1,4 +1,4 @@
-import { NavLink, Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 export default function Navigation() {
   return (
@@ -6,15 +6,15 @@ export default function Navigation() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <NavLink className="d-inline p-2 bg-dark text-white" to="/">
+          <Nav.Link className="d-inline p-2 bg-dark text-white" href="/">
             Home
-          </NavLink>
-          <NavLink className="d-inline p-2 bg-dark text-white" to="/employee">
+          </Nav.Link>
+          <Nav.Link className="d-inline p-2 bg-dark text-white" href="/employee">
             Employee
-          </NavLink>
-          <NavLink className="d-inline p-2 bg-dark text-white" to="/departments">
+          </Nav.Link>
+          <Nav.Link className="d-inline p-2 bg-dark text-white" href="/departments">
             Departments
-          </NavLink>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
