@@ -1,15 +1,44 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Table from 'react-bootstrap/esm/Table';
+import { getDepartments } from '../../requests/apiRequests/DepartmentRequests';
 
 export default function MainDepartment() {
-  const [departments, setDepartment] = useState([]);
+  const [departments, setDepartments] = useState([]);
+  const navigate = useNavigate();
+
+  const setState = async () => {
+    const response = await getDepartments();
+    setDepartments(response.data);
+  };
 
   useEffect(() => {
-    console.log('Test');
+    setState();
   });
+
+  const handleEditClick = () => {
+    navigate('/');
+  };
 
   return (
     <div className="container">
-      Department Main Page
+      <Table striped bordered hover size="sm">
+        <thead>
+          <tr>
+            <th>Department name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {departments.map((department) => (
+            <tr>
+              <td>{department.department_name}</td>
+              <td><button className="btn btn-secondary" type="button" onClick={() => handleEditClick()}>Edit</button></td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      <button className="btn btn-success w-100" type="button">Create a department</button>
     </div>
   );
 }

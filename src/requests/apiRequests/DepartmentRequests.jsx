@@ -6,13 +6,13 @@ export function getDepartments() {
 
 export function postDepartment(data) {
   return axios.post(`${process.env.REACT_APP_API}api/Department`, {
-    department_name: data.get('department_name')
+    department_name: data.get('department_name'),
   });
 }
 
 export function patchDepartment(data) {
   return axios.post(`${process.env.REACT_APP_API}api/Department`, {
-    department_name: data.get('department_name')
+    department_name: data.get('department_name'),
   });
 }
 
@@ -21,5 +21,5 @@ export function deleteDepartment(departmentId) {
 }
 
 export function getDepartment(departmentId) {
-    return axios.get(`${process.env.REACT_APP_API}api/Department/${departmentId}`);
+  return axios.get(`${process.env.REACT_APP_API}api/Department/${departmentId}`);
 }
