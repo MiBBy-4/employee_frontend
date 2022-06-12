@@ -18,9 +18,11 @@ export default function Employee() {
 
   return (
     <div className="container">
-      Personal page of
-      {employeeId}
-      Employee
+      {employee.map((e) => (
+        <div className="">
+          <span className="text">{e.employee_name}</span>
+        </div>
+      ))}
     </div>
   );
 }

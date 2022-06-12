@@ -16,8 +16,8 @@ export default function MainDepartment() {
     setState();
   });
 
-  const handleEditClick = () => {
-    navigate('/');
+  const handleEditClick = (departmentId) => {
+    navigate(`/departments/${departmentId}`);
   };
 
   return (
@@ -33,7 +33,7 @@ export default function MainDepartment() {
           {departments.map((department) => (
             <tr>
               <td>{department.department_name}</td>
-              <td><button className="btn btn-secondary" type="button" onClick={() => handleEditClick()}>Edit</button></td>
+              <td><button className="btn btn-secondary" type="button" onClick={() => handleEditClick(department.department_id)}>Edit</button></td>
             </tr>
           ))}
         </tbody>

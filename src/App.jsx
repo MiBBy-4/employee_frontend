@@ -3,6 +3,7 @@ import MainDepartment from './views/department/Main';
 import MainEmployee from './views/employee/Main';
 import Navigation from './components/templates/Navigation';
 import Employee from './views/employee/Employee';
+import Department from './views/department/Department';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           element={<MainEmployee />}
         />
         <Route path="/employee/:employeeId" element={<Employee />} />
+        <Route path="/departments/:departmentId" element={<Department />} />
       </Routes>
     </div>
   );
