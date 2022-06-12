@@ -16,8 +16,8 @@ export default function MainEmployee() {
     setState();
   });
 
-  const handleEditClick = () => {
-    navigate('/');
+  const handleEditClick = (employeeId) => {
+    navigate(`/employee/${employeeId}`);
   };
 
   return (
@@ -37,7 +37,7 @@ export default function MainEmployee() {
               <td>{employee.employee_name}</td>
               <td>{employee.date_of_joining}</td>
               <td>{employee.department_name}</td>
-              <td><button className="btn btn-secondary" type="button" onClick={() => handleEditClick()}>Edit</button></td>
+              <td><button className="btn btn-secondary" type="button" onClick={() => handleEditClick(employee.employee_id)}>Edit</button></td>
             </tr>
           ))}
         </tbody>

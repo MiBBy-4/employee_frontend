@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import MainDepartment from './views/department/Main';
 import MainEmployee from './views/employee/Main';
 import Navigation from './components/templates/Navigation';
+import Employee from './views/employee/Employee';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           path="/employee"
           element={<MainEmployee />}
         />
+        <Route path="/employee/:employeeId" element={<Employee />} />
       </Routes>
     </div>
   );
