@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Table from 'react-bootstrap/esm/Table';
-import { getDepartments } from '../../requests/apiRequests/DepartmentRequests';
+import { getDepartments, deleteDepartment } from '../../requests/apiRequests/DepartmentRequests';
 
 export default function MainDepartment() {
   const [departments, setDepartments] = useState([]);
@@ -17,7 +17,20 @@ export default function MainDepartment() {
   });
 
   const handleEditClick = (departmentId) => {
+    navigate(`/departments/${departmentId}/edit`);
+  };
+
+  const handleShowClick = (departmentId) => {
     navigate(`/departments/${departmentId}`);
+  };
+
+  const handleCreateClick = () => {
+    navigate('/departments/new');
+  };
+
+  const handleDeleteClick = async (departmentId) => {
+    await deleteDepartment(departmentId);
+    navigate('/departments');
   };
 
   return (
@@ -33,12 +46,16 @@ export default function MainDepartment() {
           {departments.map((department) => (
             <tr>
               <td>{department.department_name}</td>
-              <td><button className="btn btn-secondary" type="button" onClick={() => handleEditClick(department.department_id)}>Edit</button></td>
+              <td>
+                <button className="btn btn-secondary" type="button" onClick={() => handleEditClick(department.department_id)}>Edit</button>
+                <button className="btn btn-secondary" type="button" onClick={() => handleShowClick(department.department_id)}>Show</button>
+                <button className="btn btn-danger" type="button" onClick={() => handleDeleteClick(department.department_id)}>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>
       </Table>
-      <button className="btn btn-success w-100" type="button">Create a department</button>
+      <button className="btn btn-success w-100" type="button" onClick={() => handleCreateClick()}>Create a department</button>
     </div>
   );
 }
