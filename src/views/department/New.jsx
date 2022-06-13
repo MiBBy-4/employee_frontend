@@ -37,7 +37,7 @@ export default function DepartmentNew() {
           <Form.Control type="text" placeholder="Name of Department" name="department_name" onChange={handleIdeaChange} />
         </Form.Group>
         <Button variant="success" type="submit">
-          Update
+          Create
         </Button>
       </Form>
     </div>

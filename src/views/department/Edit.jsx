@@ -18,7 +18,7 @@ export default function DepartmentEdit() {
     setState();
   });
 
-  function handleIdeaChange(event) {
+  function handleDepartmentChange(event) {
     const { target: { value, name } } = event;
     setDepartment({
       ...department,
@@ -45,7 +45,7 @@ export default function DepartmentEdit() {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Department Name</Form.Label>
-          <Form.Control type="text" value={department.name} placeholder="Name of Department" name="department_name" onChange={handleIdeaChange} />
+          <Form.Control type="text" value={department.name} placeholder="Name of Department" name="department_name" onChange={handleDepartmentChange} />
         </Form.Group>
         <Button variant="success" type="submit">
           Update
