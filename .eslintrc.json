@@ -22,6 +22,7 @@
         "linebreak-style": "off",
         "no-unused-vars": "off",
         "react/jsx-no-bind": "off",
+        "max-len": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
 }
