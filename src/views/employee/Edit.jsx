@@ -11,7 +11,7 @@ export default function EmployeeEdit() {
 
   const setState = async () => {
     let response = await getEmployee(employeeId);
-    setEmployee(response.data);
+    setEmployee(response.data[0]);
     response = await getActiveDepartments();
     setDepartments(response.data);
   };
@@ -44,29 +44,27 @@ export default function EmployeeEdit() {
 
   return (
     <div className="container">
-      {employee.map((e) => (
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3">
-            <Form.Label>Employee name</Form.Label>
-            <Form.Control type="text" value={e.employee_name} placeholder="Employee name" name="employee_name" onChange={handleEmployeeChange} />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Date of joining</Form.Label>
-            <Form.Control type="date" value={e.date_of_joining} placeholder="Choose a date" name="date_of_joining" onChange={handleEmployeeChange} />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Department</Form.Label>
-            <Form.Select name="department_id" onChange={handleEmployeeChange}>
-              {departments.map((department) => (
-                <option value={department.department_id}>{department.department_name}</option>
-              ))}
-            </Form.Select>
-          </Form.Group>
-          <Button variant="success" type="submit">
-            Update
-          </Button>
-        </Form>
-      ))}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Employee name</Form.Label>
+          <Form.Control type="text" value={employee.employee_name} placeholder="Employee name" name="employee_name" onChange={handleEmployeeChange} />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Date of joining</Form.Label>
+          <Form.Control type="date" value={employee.date_of_joining} placeholder="Choose a date" name="date_of_joining" onChange={handleEmployeeChange} />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Department</Form.Label>
+          <Form.Select name="department_id" onChange={handleEmployeeChange}>
+            {departments.map((department) => (
+              <option value={department.department_id}>{department.department_name}</option>
+            ))}
+          </Form.Select>
+        </Form.Group>
+        <Button variant="success" type="submit">
+          Update
+        </Button>
+      </Form>
     </div>
   );
 }

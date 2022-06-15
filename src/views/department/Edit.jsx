@@ -11,7 +11,7 @@ export default function DepartmentEdit() {
   const setState = async () => {
     const response = await getDepartment(departmentId);
     const { data } = response;
-    setDepartment(data);
+    setDepartment(data[0]);
   };
 
   useEffect(() => {
@@ -42,17 +42,15 @@ export default function DepartmentEdit() {
 
   return (
     <div className="container">
-      {department.map((d) => (
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3">
-            <Form.Label>Department Name</Form.Label>
-            <Form.Control type="text" value={d.name} placeholder="Name of Department" name="department_name" onChange={handleDepartmentChange} />
-          </Form.Group>
-          <Button variant="success" type="submit">
-            Update
-          </Button>
-        </Form>
-      ))}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Department Name</Form.Label>
+          <Form.Control type="text" value={department.department_name} placeholder="Name of Department" name="department_name" onChange={handleDepartmentChange} />
+        </Form.Group>
+        <Button variant="success" type="submit">
+          Update
+        </Button>
+      </Form>
     </div>
   );
 }
