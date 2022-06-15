@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import MainPage from './views/Main';
 import MainDepartment from './views/department/Main';
 import MainEmployee from './views/employee/Main';
 import Navigation from './components/templates/Navigation';
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
+        <Route path="/" element={<MainPage />} />
         <Route path="/departments" element={<MainDepartment />} />
         <Route
           path="/employee"
