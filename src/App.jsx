@@ -3,6 +3,7 @@ import MainPage from './views/Main';
 import MainDepartment from './views/department/Main';
 import MainEmployee from './views/employee/Main';
 import Navigation from './components/templates/Navigation';
+import Footer from './components/templates/Footer';
 import Employee from './views/employee/Employee';
 import EmployeeNew from './views/employee/New';
 import EmployeeEdit from './views/employee/Edit';
@@ -28,6 +29,7 @@ function App() {
         <Route path="/departments/:departmentId/edit" element={<DepartmentEdit />} />
         <Route path="/departments/new" element={<DepartmentNew />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

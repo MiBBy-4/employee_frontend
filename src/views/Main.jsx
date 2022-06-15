@@ -42,7 +42,7 @@ export default function MainPage() {
           </div>
           <div className="services-section-row second-services-row">
             <div className="service-container">
-              <PersonLinesFill className="service-badge" />
+              <CardList className="service-badge" />
               <h1 className="service-container-header">All Departments</h1>
               <button className="btn service-btn" type="submit">Show</button>
             </div>
