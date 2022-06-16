@@ -23,6 +23,7 @@ export default function Employee() {
 
   const handleDeleteClick = async () => {
     await deleteEmployee(employeeId);
+    navigate('/employee');
   };
 
   const handleDepartmentClick = (departmentId) => {
