@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import { getDepartment, patchDepartment } from '../../requests/apiRequests/DepartmentRequests';
 
 export default function DepartmentEdit() {
-  const [department, setDepartment] = useState([]);
+  const [department, setDepartment] = useState({});
   const { departmentId } = useParams();
   const navigate = useNavigate();
 
@@ -41,16 +41,22 @@ export default function DepartmentEdit() {
   }
 
   return (
-    <div className="container">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Department Name</Form.Label>
-          <Form.Control type="text" value={department.department_name} placeholder="Name of Department" name="department_name" onChange={handleDepartmentChange} />
-        </Form.Group>
-        <Button variant="success" type="submit">
-          Update
-        </Button>
-      </Form>
-    </div>
+    <section className="create-container">
+      <div className="department-container">
+        <div className="department-personal" id="cu-department">
+          <div className="department-inner">
+            <h1 className="department-id">{department.department_id}</h1>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Control name="department_name" type="text" placeholder="Name of Department" onChange={handleDepartmentChange} className="cu-input" />
+              </Form.Group>
+              <Button variant="outline-success" type="submit" className="cu-btn">
+                Update
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -49,7 +49,7 @@ export default function Department() {
           </div>
         </div>
       </section>
-      <PaginatedItems itemsPerPage={10} employees={employees} />
+      {employees.length > 0 && <PaginatedItems itemsPerPage={10} employees={employees} />}
     </div>
   );
 }

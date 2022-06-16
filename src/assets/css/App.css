@@ -305,3 +305,34 @@ body {
 .page-item.active .page-link {
     background-image: linear-gradient(#4800ff , #5919cf);;
 }
+
+.create-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cu-department {
+    height: 50vh;
+    width: 50vw;
+}
+
+#cu-department .department-id {
+    font-size: 100px;
+}
+
+.cu-input {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.cu-input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.cu-btn {
+    width: 240px;
+    margin-top: 20px;
+}
