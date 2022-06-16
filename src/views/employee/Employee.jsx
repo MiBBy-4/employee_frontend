@@ -9,7 +9,7 @@ export default function Employee() {
   const setState = async () => {
     const response = await getEmployee(employeeId);
     const { data } = response;
-    setEmployee(data);
+    setEmployee(data[0]);
   };
 
   useEffect(() => {
@@ -18,11 +18,9 @@ export default function Employee() {
 
   return (
     <div className="container">
-      {employee.map((e) => (
-        <div className="">
-          <span className="text">{e.employee_name}</span>
-        </div>
-      ))}
+      <div className="">
+        <span className="text">{employee.employee_name}</span>
+      </div>
     </div>
   );
 }

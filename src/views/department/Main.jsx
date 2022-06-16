@@ -16,46 +16,40 @@ export default function MainDepartment() {
     setState();
   });
 
-  const handleEditClick = (departmentId) => {
-    navigate(`/departments/${departmentId}/edit`);
-  };
-
   const handleShowClick = (departmentId) => {
     navigate(`/departments/${departmentId}`);
   };
 
-  const handleCreateClick = () => {
-    navigate('/departments/new');
-  };
-
-  const handleDeleteClick = async (departmentId) => {
-    await deleteDepartment(departmentId);
-    navigate('/departments');
-  };
-
   return (
-    <div className="container">
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>Department name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {departments.map((department) => (
-            <tr>
-              <td>{department.department_name}</td>
-              <td>
-                <button className="btn btn-secondary" type="button" onClick={() => handleEditClick(department.department_id)}>Edit</button>
-                <button className="btn btn-secondary" type="button" onClick={() => handleShowClick(department.department_id)}>Show</button>
-                <button className="btn btn-danger" type="button" onClick={() => handleDeleteClick(department.department_id)}>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-      <button className="btn btn-success w-100" type="button" onClick={() => handleCreateClick()}>Create a department</button>
+    <div>
+      <section className="preview-section">
+        <h1 className="text-center">Departments</h1>
+        <div className="row preview-row">
+          <div className="col-6 preview-first-col">
+            <h1>Check Departments</h1>
+            <a href="#departments" className="btn preview-btn">Check</a>
+          </div>
+          <div className="col-6 preview-second-col">
+            <h1>Create a Department</h1>
+            <a href="#!" className="btn preview-btn">Create</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="departments" id="departments">
+        <h1 className="text-center departments-header">Departments List</h1>
+        <div className="departments-container">
+          <div className="row departments-row">
+            {departments.map((department) => (
+              <div className="col-1 department">
+                <h3 className="departments-id">{department.department_id}</h3>
+                <h6 className="departments-name">{department.department_name}</h6>
+                <button type="submit" onClick={() => handleShowClick(department.department_id)} className="btn departments-btn">Show</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

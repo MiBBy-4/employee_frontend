@@ -9,7 +9,7 @@ export default function Department() {
   const setState = async () => {
     const response = await getDepartment(departmentId);
     const { data } = response;
-    setDepartment(data);
+    setDepartment(data[0]);
   };
 
   useEffect(() => {
@@ -18,11 +18,9 @@ export default function Department() {
 
   return (
     <div className="container">
-      {department.map((d) => (
-        <div className="">
-          <span className="text">{d.department_name}</span>
-        </div>
-      ))}
+      <div className="">
+        <span className="text">{department.department_name}</span>
+      </div>
     </div>
   );
 }
