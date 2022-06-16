@@ -27,7 +27,7 @@ export default function MainPage() {
             <div className="service-container">
               <PersonLinesFill className="service-badge" />
               <h1 className="service-container-header">All Employees</h1>
-              <button className="btn service-btn" type="submit">Show</button>
+              <a className="btn service-btn" type="submit" href="/employee">Show</a>
             </div>
             <div className="service-container service-about-us">
               <h1 className="service-container-header service-about-us-header">About us</h1>
@@ -37,19 +37,19 @@ export default function MainPage() {
             <div className="service-container">
               <PersonPlusFill className="service-badge" />
               <h1 className="service-container-header">New Employee</h1>
-              <button className="btn service-btn" type="submit">New</button>
+              <a className="btn service-btn" type="submit" href="/employee/new">New</a>
             </div>
           </div>
           <div className="services-section-row second-services-row">
             <div className="service-container">
               <CardList className="service-badge" />
               <h1 className="service-container-header">All Departments</h1>
-              <button className="btn service-btn" type="submit">Show</button>
+              <a className="btn service-btn" type="submit" href="/departments">Show</a>
             </div>
             <div className="service-container">
               <PlusSquareFill className="service-badge" />
               <h1 className="service-container-header">New Department</h1>
-              <button className="btn service-btn" type="submit">New</button>
+              <a className="btn service-btn" type="submit" href="/departments/new">New</a>
             </div>
           </div>
         </div>

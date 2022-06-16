@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
-import ReactPaginate from 'react-paginate';
 import { getDepartment, getEmployees, deleteDepartment } from '../../requests/apiRequests/DepartmentRequests';
 import PaginatedItems from '../../components/pagination/EmployeesPaginate';
 

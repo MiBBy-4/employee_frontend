@@ -11,7 +11,7 @@ function Items({ currentItems }) {
 
   return (
     <section className="departments" id="employees">
-      <h1 className="text-center departments-header">Department Employees List</h1>
+      <h1 className="text-center departments-header">Employees List</h1>
       <div className="departments-container">
         <div className="row departments-row">
           {currentItems && currentItems.map((item) => (

@@ -336,3 +336,19 @@ body {
     width: 240px;
     margin-top: 20px;
 }
+
+#employees-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.employee-footer {
+   font-size: 13px;
+}
+
+.btn-dep {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+}

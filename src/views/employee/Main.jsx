@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Table from 'react-bootstrap/esm/Table';
 import { getEmployees, deleteEmployee } from '../../requests/apiRequests/EmployeeRequests';
+import PaginatedItems from '../../components/pagination/EmployeesPaginate';
 
 export default function MainEmployee() {
   const [employees, setEmployee] = useState([]);
-  const navigate = useNavigate();
 
   const setState = async () => {
     const response = await getEmployees();
@@ -16,50 +14,24 @@ export default function MainEmployee() {
     setState();
   });
 
-  const handleShowClick = (employeeId) => {
-    navigate(`/employee/${employeeId}`);
-  };
-
-  const handleCreateClick = () => {
-    navigate('/employee/new');
-  };
-
-  const handleEditClick = (employeeId) => {
-    navigate(`/employee/${employeeId}/edit`);
-  };
-
-  const handleDeleteClick = async (employeeId) => {
-    await deleteEmployee(employeeId);
-    navigate('/employee');
-  };
-
   return (
-    <div className="container">
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>Employee Name</th>
-            <th>Date of joining</th>
-            <th>Department Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employees.map((employee) => (
-            <tr>
-              <td>{employee.employee_name}</td>
-              <td>{employee.date_of_joining}</td>
-              <td>{employee.department_name}</td>
-              <td>
-                <button className="btn btn-secondary" type="button" onClick={() => handleEditClick(employee.employee_id)}>Edit</button>
-                <button className="btn btn-secondary" type="button" onClick={() => handleShowClick(employee.employee_id)}>Show</button>
-                <button className="btn btn-danger" type="button" onClick={() => handleDeleteClick(employee.employee_id)}>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-      <button className="btn btn-success w-100" type="button" onClick={() => handleCreateClick()}>Create an employee</button>
+    <div>
+      <section className="preview-section">
+        <h1 className="text-center">Employees</h1>
+        <div className="row preview-row">
+          <div className="col-6 preview-first-col">
+            <h1>Check Employees</h1>
+            <a href="#employees" className="btn preview-btn">Check</a>
+          </div>
+          <div className="col-6 preview-second-col">
+            <h1>Create an Employee</h1>
+            <a href="/employee/new " className="btn preview-btn">Create</a>
+          </div>
+        </div>
+      </section>
+      <div id="employees">
+        {employees.length > 0 && <PaginatedItems itemsPerPage={10} employees={employees} />}
+      </div>
     </div>
   );
 }
