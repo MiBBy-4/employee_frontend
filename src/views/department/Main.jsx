@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Table from 'react-bootstrap/esm/Table';
-import { getDepartments, deleteDepartment } from '../../requests/apiRequests/DepartmentRequests';
+import { getDepartments } from '../../requests/apiRequests/DepartmentRequests';
 
 export default function MainDepartment() {
   const [departments, setDepartments] = useState([]);
@@ -31,7 +30,7 @@ export default function MainDepartment() {
           </div>
           <div className="col-6 preview-second-col">
             <h1>Create a Department</h1>
-            <a href="#!" className="btn preview-btn">Create</a>
+            <a href="/departments/new " className="btn preview-btn">Create</a>
           </div>
         </div>
       </section>

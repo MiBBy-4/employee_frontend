@@ -34,3 +34,7 @@ export function deleteDepartment(departmentId) {
 export function getDepartment(departmentId) {
   return axios.get(`${process.env.REACT_APP_API}api/Department/${departmentId}`);
 }
+
+export function getEmployees(departmentId) {
+  return axios.get(`${process.env.REACT_APP_API}api/Department/GetEmployees/${departmentId}`);
+}

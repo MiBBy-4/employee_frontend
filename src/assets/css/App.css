@@ -248,3 +248,60 @@ body {
     justify-content: space-evenly;
 }
 
+.department-section {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: silver;
+}
+
+.department-personal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 10px solid transparent;
+    border-image: linear-gradient(#7a54db , #b418db);
+    -moz-border-image: -moz-linear-gradient(#7a54db , #b418db);
+    -webkit-border-image: -webkit-linear-gradient(#7a54db , #b418db);
+    border-image-slice: 1;
+    width: 300px;
+    height: 300px;
+}
+
+.actions-container {
+    display: flex;
+    align-items: center;
+}
+
+.department-action {
+    display: block;
+    margin-top: 9px;
+}
+
+#employee {
+    border-image: linear-gradient(#4800ff , #5919cf);
+    -moz-border-image: -moz-linear-gradient(#4800ff , #5919cf);
+    -webkit-border-image: -webkit-linear-gradient(#4800ff , #5919cf);
+    border-image-slice: 1;
+    text-overflow: ellipsis;
+}
+
+#employee:hover {
+    background-image: linear-gradient(#4800ff , #5919cf);
+}
+
+.employee-name {
+    font-size: 14px;
+}
+
+
+.pagination {
+    justify-content: center;
+}
+
+.page-item.active .page-link {
+    background-image: linear-gradient(#4800ff , #5919cf);;
+}
